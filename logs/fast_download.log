@@ -1,0 +1,34 @@
+2026-01-27T04:35:03 fasterq-dump.3.0.3 err: cmn_iter.c cmn_read_String( #4679681 ).VCursorCellDataDirect() -> RC(rcPS,rcCondition,rcWaiting,rcTimeout,rcExhausted) 
+2026-01-27T04:35:05 fasterq-dump.3.0.3 err: cmn_iter.c cmn_read_String( #8218625 ).VCursorCellDataDirect() -> RC(rcPS,rcCondition,rcWaiting,rcTimeout,rcExhausted) 
+2026-01-27T04:40:52 fasterq-dump.3.0.3 err: cmn_iter.c cmn_read_String( #11911169 ).VCursorCellDataDirect() -> RC(rcPS,rcCondition,rcWaiting,rcTimeout,rcExhausted) 
+spots read      : 5,770,914
+reads read      : 11,541,828
+reads written   : 5,770,914
+reads 0-length  : 5,770,914
+fasterq-dump quit with error code 3
+2026-01-27T04:51:25 fasterq-dump.3.0.3 err: cmn_iter.c cmn_read_String( #6659427 ).VCursorCellDataDirect() -> RC(rcPS,rcCondition,rcWaiting,rcTimeout,rcExhausted) 
+spots read      : 39,247
+reads read      : 78,494
+reads written   : 39,247
+reads 0-length  : 39,247
+fasterq-dump quit with error code 3
+2026-01-27T05:05:10 fasterq-dump.3.0.3 err: cmn_iter.c cmn_read_String( #7026985 ).VCursorCellDataDirect() -> RC(rcPS,rcCondition,rcWaiting,rcTimeout,rcExhausted) 
+spots read      : 71,088
+reads read      : 142,176
+reads written   : 71,088
+reads 0-length  : 71,088
+fasterq-dump quit with error code 3
+2026-01-27T05:29:58 fasterq-dump.3.0.3 err: cmn_iter.c cmn_read_uint8_array( #3514595 ).VCursorCellDataDirect() -> RC(rcPS,rcCondition,rcWaiting,rcTimeout,rcExhausted) 
+2026-01-27T05:29:58 fasterq-dump.3.0.3 err: row #3514595 : READ.len(76) != QUALITY.len(0) (F) 
+spots read      : 177,047
+reads read      : 354,094
+reads written   : 177,046
+reads 0-length  : 177,046
+reads invalid   : 1
+fasterq-dump quit with error code 3
+2026-01-27T05:44:02 fasterq-dump.3.0.3 err: make_join_printer_from_filename().KDirectoryCreateFile( '/home/harshitap/Bulk_RNA_Seq/fasterq.tmp.k8s-worker01-node.1534375/SRR7179508.k8s-worker01-node.1534375.0003.0' ) -> RC(rcFS,rcDirectory,rcCreating,rcPath,rcNotFound)
+2026-01-27T05:51:06 fasterq-dump.3.0.3 err: cmn_iter.c cmn_read_uint8_array( #1 ).VCursorCellDataDirect() -> RC(rcPS,rcCondition,rcWaiting,rcTimeout,rcExhausted) 
+spots read      : 1
+reads read      : 2
+reads written   : 0
+fasterq-dump quit with error code 3

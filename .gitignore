@@ -1,0 +1,12 @@
+# Raw data
+data/
+fastq/
+fastqc_results/
+multiqc_report/
+alignedreads/
+
+# Temporary files
+*.sra
+*.fastq
+*.fastq.gz
+fasterq.tmp*
