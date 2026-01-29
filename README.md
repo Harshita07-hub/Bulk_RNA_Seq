@@ -35,8 +35,7 @@ Two cell lines are analyzed:
 - **LNCaP**
 - **PC3**
 
-Only **control samples** were selected to ensure that observed changes are due to
-oxygen conditions and not genetic perturbations.
+Only **control samples** were selected to ensure that observed changes are due to oxygen conditions and not genetic perturbations.
 
 ---
 
@@ -60,16 +59,17 @@ individual **SRR run identifiers**, ensuring full control over data handling.
 ## 🗂️ Project Directory Structure
 
 Bulk_RNA_Seq/
-├── data/
-│ ├── raw/ # Original SRA files
-│ └── processed/ # Processed intermediate data
-├── fastq/ # FASTQ files generated from SRA
-├── fastqc_results/ # FASTQC quality control reports
-├── analysis/ # Metadata, summaries, and small outputs
-├── scripts/ # Reproducible scripts used in the analysis
-├── logs/ # Execution logs
-├── figs/ # Figures and screenshots
-└── results/ # Final results
+├── fastq/              # Raw and processed FASTQ files
+├── fastqc_results/     # FastQC output (HTML + ZIP)
+├── multiqc_report/     # MultiQC summary report
+├── scripts/            # Bash scripts used in the pipeline
+├── figs/               # Screenshots and figures
+├── analysis/           # Intermediate analysis files
+├── alignedreads/       # Alignment outputs (future)
+├── quants/             # Gene quantification results (future)
+├── results/            # Final results
+└── README.md
+
 
 
 
@@ -121,3 +121,10 @@ FASTQ structure was inspected to confirm:
 
 Sequencing depth was estimated by counting total lines in each FASTQ file and dividing by four (each read occupies four lines).  
 All samples showed sufficient read depth for bulk RNA-Seq differential expression analysis.
+
+
+FASTQ Concatenation
+
+Each biological sample was sequenced across multiple SRA runs (technical replicates). FASTQ files corresponding to the same biological sample were concatenated before trimming to create one FASTQ file per sample.
+
+This ensures uniform trimming, simplifies downstream analysis, and preserves the total sequencing depth for each sample. After concatenation, each FASTQ file represents one complete biological sample and was used for further QC, trimming, alignment, and gene quantification.
