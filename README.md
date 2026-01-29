@@ -110,3 +110,14 @@ Each step is documented and reproducible.
 This repository is actively evolving as the analysis progresses.
 The README and scripts are updated incrementally to reflect each completed step.
 
+## FASTQ sanity checks
+
+Before downstream RNA-Seq analysis, FASTQ files were validated for correctness and sequencing depth.
+
+FASTQ structure was inspected to confirm:
+- Proper 4-line FASTQ format
+- Presence of base quality scores
+- Expected read length (76 bp)
+
+Sequencing depth was estimated by counting total lines in each FASTQ file and dividing by four (each read occupies four lines).  
+All samples showed sufficient read depth for bulk RNA-Seq differential expression analysis.
