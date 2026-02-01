@@ -128,3 +128,30 @@ FASTQ Concatenation
 Each biological sample was sequenced across multiple SRA runs (technical replicates). FASTQ files corresponding to the same biological sample were concatenated before trimming to create one FASTQ file per sample.
 
 This ensures uniform trimming, simplifies downstream analysis, and preserves the total sequencing depth for each sample. After concatenation, each FASTQ file represents one complete biological sample and was used for further QC, trimming, alignment, and gene quantification.
+## Read Trimming and Quality Control
+
+After concatenation of raw FASTQ files, reads were processed to improve sequencing quality prior to downstream analysis.
+
+### Read Trimming
+
+Quality trimming was performed using **Trimmomatic (v0.40)** to remove low-quality bases from sequencing reads. Trimming focused on eliminating poor-quality bases from the 3′ end of reads, which commonly impact downstream analyses.
+
+Single-end reads were trimmed using the following parameters:
+- Removal of trailing bases with Phred quality scores below 10 (`TRAILING:10`)
+- Phred+33 quality score encoding
+- Multi-threaded execution for improved performance
+
+All concatenated FASTQ files were trimmed in a uniform and reproducible manner using shell scripts.
+
+### Quality Assessment of Trimmed Reads
+
+Post-trimming quality assessment was carried out using **FastQC** to evaluate improvements in read quality. FastQC reports were generated for all trimmed FASTQ files to examine key quality metrics, including:
+- Per-base sequence quality
+- Sequence length distribution
+- Residual low-quality regions or technical biases
+
+FastQC was executed in batch mode, and results were organized into a dedicated output directory (`fastqc_trimmed_results/`).
+
+### Reproducibility
+
+All trimming and quality control steps were implemented via shell scripts available in the `scripts/` directory, ensuring reproducibility and transparency of the analysis workflow.
