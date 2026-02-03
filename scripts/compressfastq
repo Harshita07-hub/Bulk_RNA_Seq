@@ -1,0 +1,4 @@
+harshitap@k8s-worker01-node:~/Bulk_RNA_Seq$ for f in fastq/*.fastq; do
+    echo "Compressing $f ..."
+    gzip "$f"
+done
