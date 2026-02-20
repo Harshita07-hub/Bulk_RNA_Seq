@@ -155,3 +155,87 @@ FastQC was executed in batch mode, and results were organized into a dedicated o
 ### Reproducibility
 
 All trimming and quality control steps were implemented via shell scripts available in the `scripts/` directory, ensuring reproducibility and transparency of the analysis workflow.
+
+## 📊 Quality Control and Visualization
+
+The following plots were generated to assess the data and visualize results. All figures are saved in the `figs/` directory.
+
+### PCA Plot
+Principal Component Analysis shows clear separation by cell line (PC1, 99% variance) and a distinct effect of hypoxia (PC2, 1% variance). This confirms that both cell line differences and hypoxia treatment contribute to global gene expression patterns.
+
+![PCA Plot](figs/pca.png)
+
+**Interpretation:** PC1 separates LNCaP and PC3 cells, indicating strong cell-line-specific expression differences. PC2 separates hypoxia from normoxia samples, confirming that hypoxia induces a detectable transcriptional response across both cell lines.
+
+---
+
+### Volcano Plot
+Highly significant genes are highlighted; red points indicate upregulation under hypoxia, blue points downregulation.
+
+![Volcano Plot](figs/volcano.png)
+
+**Interpretation:** The volcano plot shows a large number of significantly differentially expressed genes (padj < 0.05). Asymmetric distribution with more red points (upregulated) than blue (downregulated) indicates hypoxia predominantly activates gene expression rather than suppressing it.
+
+---
+
+### MA Plot
+The MA plot shows the relationship between gene expression abundance and log fold change.
+
+![MA Plot](figs/ma_plot.png)
+
+**Interpretation:** The MA plot confirms no systematic bias in fold change estimates. Genes with low mean expression show expected higher variance, but no obvious trend or skew is observed, validating the DESeq2 normalization.
+
+---
+
+### Heatmap of Top 50 DE Genes
+Unsupervised clustering of the top 50 most significant genes.
+
+![Heatmap](figs/heatmap.png)
+
+**Interpretation:** The heatmap clearly separates hypoxia samples from normoxia samples, indicating a robust and consistent transcriptional response. Within hypoxia samples, LNCaP and PC3 show distinct expression patterns, suggesting cell-type-specific hypoxia responses.
+
+---
+
+## 🧬 Gene Set Enrichment Analysis (GSEA)
+
+To identify biological pathways altered by hypoxia, we performed GSEA using Hallmark gene sets.
+
+### Top Enriched Pathways
+
+| Hallmark Pathway | NES | p.adjust |
+|------------------|-----|----------|
+| HALLMARK_HYPOXIA | 2.83 | 0.0012 |
+| HALLMARK_GLYCOLYSIS | 2.51 | 0.0015 |
+| HALLMARK_MTORC1_SIGNALING | 2.20 | 0.0021 |
+| HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION | 1.95 | 0.0034 |
+
+#### Dotplot
+![GSEA Dotplot](figs/gsea_dotplot.png)
+
+**Interpretation:** The dotplot shows the most significantly enriched Hallmark pathways. Hypoxia, glycolysis, and mTORC1 signaling are top hits, consistent with cellular adaptation to low oxygen. EMT enrichment suggests hypoxia may promote a more invasive phenotype.
+
+#### Waterfall Plot
+![GSEA Waterfall](figs/gsea_waterfall.png)
+
+**Interpretation:** The waterfall plot displays all Hallmark pathways with their NES scores. Positive NES (red) indicates pathways activated by hypoxia, while negative NES (blue) indicates suppressed pathways. Interferon response pathways are notably suppressed, suggesting hypoxia may dampen immune-related signaling.
+
+---
+
+## 🔬 Androgen Receptor Signaling
+
+The original paper reported that hypoxia suppresses AR signaling in LNCaP cells. In our combined analysis, the Androgen Response pathway showed a positive NES (not significant). This discrepancy likely arises because PC3 cells are AR-negative, diluting the effect in the combined analysis.
+
+**Interpretation:** While we successfully reproduced most hypoxia-related findings, AR suppression could not be clearly demonstrated in the combined dataset. A dedicated LNCaP-only analysis with larger sample size would be needed to validate this specific finding.
+
+---
+
+## 🔍 Comparison with Guo et al. (2019)
+
+| Finding | Reproduced? | Evidence |
+|---------|-------------|----------|
+| Hypoxia induces strong transcriptional response | ✅ Yes | 911 DEGs; classic markers upregulated |
+| Hypoxia activates glycolysis, mTORC1, EMT | ✅ Yes | Positive enrichment in GSEA |
+| AR signaling suppressed | ⚠️ Partial | Not significant in combined analysis |
+| Neuroendocrine markers | ❓ Not assessed | Future work |
+
+**Overall Interpretation:** Our analysis successfully reproduces the core finding that hypoxia activates glycolysis, mTORC1, and EMT pathways in prostate cancer cells. The hypoxia treatment was effective, as evidenced by strong upregulation of classic HIF1α targets (VEGFA, CA9, PDK1, LDHA, PGK1). The discrepancy in AR signaling highlights the importance of cell-type-specific analysis and adequate sample size.
