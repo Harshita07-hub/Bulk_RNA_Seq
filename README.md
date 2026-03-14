@@ -159,7 +159,7 @@ The following plots were generated to assess the data and visualize results. All
 ### PCA Plot
 Principal Component Analysis shows clear separation by cell line (PC1, 99% variance) and a distinct effect of hypoxia (PC2, 1% variance). This confirms that both cell line differences and hypoxia treatment contribute to global gene expression patterns.
 
-![PCA Plot](pca_plot.png)
+![PCA Plot]
 <img width="497" height="354" alt="Image" src="https://github.com/user-attachments/assets/c7f0ac38-8957-4cd8-b880-a5eb4359eb32" />
 
 
