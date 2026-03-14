@@ -209,7 +209,7 @@ To identify biological pathways altered by hypoxia, I performed GSEA using Hallm
 | HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION | 1.95 | 0.0034 |
 
 #### Dotplot
-![GSEA Dotplot](https://raw.githubusercontent.com/harshitap26/Bulk_RNA_Seq/main/figs/gsea_dotplot.png)
+<img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/d98fdc96-9c0e-4b14-8716-121d103416e0" />
 
 **Interpretation:** The dotplot shows the most significantly enriched Hallmark pathways in my analysis. Hypoxia, glycolysis, and mTORC1 signaling are top hits, consistent with cellular adaptation to low oxygen. EMT enrichment suggests hypoxia may promote a more invasive phenotype.
 
