@@ -189,7 +189,8 @@ The MA plot shows the relationship between gene expression abundance and log fol
 ### Heatmap of Top 50 DE Genes
 Unsupervised clustering of the top 50 most significant genes.
 
-![Heatmap](https://raw.githubusercontent.com/harshitap26/Bulk_RNA_Seq/main/figs/heatmap.png)
+
+<img width="497" height="354" alt="Image" src="https://github.com/user-attachments/assets/1d3d4dc1-1e51-455a-a727-eab1828456cb" />
 
 **Interpretation:** The heatmap clearly separates hypoxia samples from normoxia samples, indicating a robust and consistent transcriptional response. Within hypoxia samples, LNCaP and PC3 show distinct expression patterns, suggesting cell-type-specific hypoxia responses.
 
