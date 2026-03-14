@@ -179,7 +179,8 @@ Highly significant genes are highlighted; red points indicate upregulation under
 ### MA Plot
 The MA plot shows the relationship between gene expression abundance and log fold change.
 
-![MA Plot](https://raw.githubusercontent.com/harshitap26/Bulk_RNA_Seq/main/figs/ma_plot.png)
+
+<img width="497" height="354" alt="Image" src="https://github.com/user-attachments/assets/026b2395-269b-430b-8b3f-0cf638999ad2" />
 
 **Interpretation:** The MA plot confirms no systematic bias in my fold change estimates. Genes with low mean expression show expected higher variance, but no obvious trend or skew is observed, validating the DESeq2 normalization.
 
