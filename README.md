@@ -161,6 +161,8 @@ Principal Component Analysis shows clear separation by cell line (PC1, 99% varia
 
 ![PCA Plot](pca_plot.png)
 
+
+
 **Interpretation:** PC1 separates LNCaP and PC3 cells, indicating strong cell-line-specific expression differences. PC2 separates hypoxia from normoxia samples, confirming that hypoxia induces a detectable transcriptional response across both cell lines.
 
 ---
