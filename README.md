@@ -159,7 +159,6 @@ The following plots were generated to assess the data and visualize results. All
 ### PCA Plot
 Principal Component Analysis shows clear separation by cell line (PC1, 99% variance) and a distinct effect of hypoxia (PC2, 1% variance). This confirms that both cell line differences and hypoxia treatment contribute to global gene expression patterns.
 
-![PCA Plot]
 <img width="497" height="354" alt="Image" src="https://github.com/user-attachments/assets/c7f0ac38-8957-4cd8-b880-a5eb4359eb32" />
 
 
@@ -171,7 +170,7 @@ Principal Component Analysis shows clear separation by cell line (PC1, 99% varia
 ### Volcano Plot
 Highly significant genes are highlighted; red points indicate upregulation under hypoxia, blue points downregulation.
 
-![Volcano Plot](https://raw.githubusercontent.com/harshitap26/Bulk_RNA_Seq/main/figs/volcano.png)
+<img width="497" height="354" alt="Image" src="https://github.com/user-attachments/assets/132c5ca0-702a-43be-955b-347d9a85bf38" />
 
 **Interpretation:** The volcano plot shows a large number of significantly differentially expressed genes (padj < 0.05). I observed an asymmetric distribution with more red points (upregulated) than blue (downregulated), indicating hypoxia predominantly activates gene expression rather than suppressing it.
 
