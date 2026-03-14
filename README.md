@@ -216,7 +216,7 @@ To identify biological pathways altered by hypoxia, I performed GSEA using Hallm
 **Interpretation:** The dotplot shows the most significantly enriched Hallmark pathways in my analysis. Hypoxia, glycolysis, and mTORC1 signaling are top hits, consistent with cellular adaptation to low oxygen. EMT enrichment suggests hypoxia may promote a more invasive phenotype.
 
 #### Waterfall Plot
-![GSEA Waterfall](https://raw.githubusercontent.com/harshitap26/Bulk_RNA_Seq/main/figs/gsea_waterfall.png)
+<img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/dc162d8c-ccc8-41ae-87b9-9d1a8b437922" />
 
 **Interpretation:** The waterfall plot displays all Hallmark pathways with their NES scores. Positive NES (red) indicates pathways activated by hypoxia, while negative NES (blue) indicates suppressed pathways. I found that interferon response pathways are notably suppressed, suggesting hypoxia may dampen immune-related signaling.
 
