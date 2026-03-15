@@ -402,7 +402,33 @@ To identify biological pathways altered by hypoxia, I performed GSEA using Hallm
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/3e36e913-459b-481e-86f1-e3d739031ca9" />
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/966c2ed5-8880-4373-8217-34d1d4bc3f08" />
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/a3612ce8-bc72-42c8-8411-36e1b8a6ae96" />
-**Interpretation:** The dotplot shows the most significantly enriched Hallmark pathways in my analysis. Hypoxia, glycolysis, and mTORC1 signaling are top hits, consistent with cellular adaptation to low oxygen. EMT enrichment suggests hypoxia may promote a more invasive phenotype.
+## 📊 Gene Set Enrichment Analysis (GSEA)
+
+To identify biological pathways affected by hypoxia, Gene Set Enrichment Analysis (GSEA) was performed using the Hallmark gene sets.
+
+### Key Findings
+
+Several pathways were significantly enriched under hypoxic conditions:
+
+- **HYPOXIA** – confirms activation of HIF1α-related transcriptional programs  
+- **GLYCOLYSIS** – supports metabolic reprogramming toward glycolysis (Warburg effect)  
+- **MTORC1 SIGNALING** – links hypoxia to cellular growth and metabolic regulation  
+- **EPITHELIAL MESENCHYMAL TRANSITION (EMT)** – suggests microenvironment and cellular remodeling  
+- **TNFA SIGNALING VIA NFKB** – indicates inflammatory and stress-response signaling  
+- **UV RESPONSE DN** – associated with cellular stress and DNA damage response pathways  
+
+### Consistency with Differential Expression Analysis
+
+The GSEA results align with observations from the differential expression analyses:
+
+- Upregulation of **PFKFB4, PDK1, and LDHA** in the volcano plot corresponds with enrichment of the **GLYCOLYSIS** pathway.  
+- Increased expression of **CA9, BNIP3, and P4HA1** aligns with enrichment of the **HYPOXIA** pathway.  
+- Coordinated upregulation of hypoxia-responsive genes in the heatmap further supports pathway-level enrichment observed in GSEA.
+
+### Conclusion
+
+GSEA highlights a **coordinated transcriptional response to hypoxia** involving metabolic reprogramming, activation of canonical HIF1α pathways, and cellular stress adaptation. These pathway-level results complement the differential expression analysis and strengthen the overall interpretation of the dataset.
+
 
 #### Waterfall Plot
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/dc162d8c-ccc8-41ae-87b9-9d1a8b437922" />
