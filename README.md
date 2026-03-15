@@ -85,6 +85,10 @@ repository lightweight and reproducible.
 
 ---
 
+## Pipeline 
+
+SRA → FASTQ → QC → Trimming → Alignment → Quantification → DESeq2 → GSEA
+
 ## 🔍 SRA Metadata Validation
 
 Before converting SRA files to FASTQ format, metadata for selected runs was
@@ -146,10 +150,10 @@ Quality trimming was performed using **Trimmomatic (v0.40)** to remove low-quali
 All concatenated FASTQ files were trimmed in a uniform and reproducible manner using shell scripts.
 
 ### Quality Assessment of Trimmed Reads
-
-Post-trimming quality assessment was carried out using **FastQC** to evaluate improvements in read quality.Quality of trimmed reads was assessed using FastQC. 
+Post-trimming quality assessment was carried out using **FastQC** to evaluate improvements in read quality.
 
 FastQC was executed in batch mode, and results were organized into a dedicated output directory (`fastqc_trimmed_results/`).
+
 
 ## 📊 Quality Control and Visualization
 
@@ -166,12 +170,12 @@ PC2 separates hypoxia from normoxia samples, confirming that oxygen availability
 
 ---
 
-### Volcano Plot
+### Volcano Plot Analysis
 Highly significant genes are highlighted; red points indicate upregulation under hypoxia, blue points downregulation.
 
 <img width="1255" height="692" alt="Image" src="https://github.com/user-attachments/assets/4183494c-4075-49c3-90b9-6cc0a8f162fe" />
 
-## 📊 Volcano Plot Analysis: Transcriptional Response to Hypoxia
+## 📊 Volcano Plot Interpretation : Transcriptional Response to Hypoxia
 
 ### Key Observations
 
@@ -206,14 +210,14 @@ Overall, the volcano plot demonstrates a coordinated transcriptional response to
 
 ---
 
-### MA Plot
+### MA Plot Analysis
 The MA plot shows the relationship between gene expression abundance and log fold change.
 
 
 
 <img width="1123" height="680" alt="Image" src="https://github.com/user-attachments/assets/ebe8a7a2-c0df-439a-8c5b-d77ff144069d" />
 
-## 📈 MA Plot Analysis
+## 📈 MA Plot Interpretation
 
 The MA plot visualizes the relationship between average gene expression and log₂ fold change between hypoxic and normoxic conditions.
 
@@ -235,6 +239,7 @@ Overall, the MA plot supports the reliability of the dataset and confirms that d
 ---
 
 ### Heatmap of Top 50 DE Genes
+
 Unsupervised clustering of the top 50 most significant genes.
 The heatmap shows clear clustering of samples by oxygen condition.
 Hypoxia samples cluster together and display strong upregulation of multiple hypoxia-responsive genes, including **CA9, BNIP3, PDK1, LDHA, and PGK1**, which are well-known HIF1α targets.
@@ -280,7 +285,7 @@ These findings reflect a comprehensive transcriptional program enabling prostate
 
 ## 🧬 Gene Set Enrichment Analysis (GSEA)
 
-To identify biological pathways altered by hypoxia, I performed GSEA using Hallmark gene sets.
+Gene Set Enrichment Analysis (GSEA) was performed using Hallmark gene sets to identify biological pathways altered by hypoxia.
 
 ### Top Enriched Pathways
 
@@ -370,6 +375,18 @@ The GSEA results are consistent with observations from the differential expressi
 
 The waterfall plots indicate that hypoxia induces a **coordinated transcriptional response** involving metabolic reprogramming, activation of canonical hypoxia pathways, and cellular stress adaptation. In contrast, pathways related to immune signaling and proliferation show reduced activity under hypoxic conditions. These pathway-level findings support and validate the gene-level results obtained from differential expression analysis.
 ---
+
+## 🛠️ Tools and Software
+
+The following tools were used in this analysis pipeline:
+
+- **SRA Toolkit** – downloading sequencing data
+- **FastQC** – quality control of sequencing reads
+- **MultiQC** – aggregation of QC reports
+- **Trimmomatic** – read trimming
+- **R / DESeq2** – differential expression analysis
+- **clusterProfiler** – pathway enrichment analysis
+- **ggplot2 / pheatmap** – data visualization
 
 ## 🔬 Comparison with Guo et al. (2019)
 
