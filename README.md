@@ -113,11 +113,6 @@ Each step is documented and reproducible.
 
 ---
 
-## 🧠 Notes
-
-This repository is actively evolving as the analysis progresses.
-The README and scripts are updated incrementally to reflect each completed step.
-
 ## FASTQ Processing and Validation
 
 Before downstream RNA-seq analysis, FASTQ files were validated to ensure correct structure and sufficient sequencing depth.
