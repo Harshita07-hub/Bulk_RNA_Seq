@@ -170,7 +170,89 @@ Highly significant genes are highlighted; red points indicate upregulation under
 
 <img width="1255" height="692" alt="Image" src="https://github.com/user-attachments/assets/4183494c-4075-49c3-90b9-6cc0a8f162fe" />
 
-**Interpretation:** The volcano plot shows a large number of significantly differentially expressed genes (padj < 0.05). I observed an asymmetric distribution with more red points (upregulated) than blue (downregulated), indicating hypoxia predominantly activates gene expression rather than suppressing it.
+## 📊 Volcano Plot Analysis: Transcriptional Response to Hypoxia
+
+### Overall Distribution
+
+The volcano plot reveals widespread transcriptional reprogramming under hypoxic conditions, with a substantial number of genes crossing the significance threshold (*padj < 0.05*). The symmetric distribution around zero indicates good data quality, while the asymmetric enrichment of **upregulated genes (red)** compared to **downregulated genes (blue)** suggests that hypoxia predominantly **activates gene expression rather than repressing it**.
+
+---
+
+## 🔴 Upregulated Genes: Hallmarks of Hypoxic Adaptation
+
+### Metabolic Reprogramming (Warburg Effect)
+
+Several significantly upregulated genes are involved in **glycolytic metabolism**, indicating a metabolic shift toward glycolysis.
+
+* **[PFKFB4](https://www.ncbi.nlm.nih.gov/gene/5217)** – A glycolytic regulator that enhances glycolytic flux, allowing cells to generate energy efficiently under low oxygen conditions.
+* **[PDK1](https://www.ncbi.nlm.nih.gov/gene/5163)** – Pyruvate dehydrogenase kinase that inhibits mitochondrial oxidative phosphorylation by preventing pyruvate entry into the TCA cycle.
+* **[PGK1](https://www.ncbi.nlm.nih.gov/gene/5230)** – A key glycolytic enzyme that catalyzes ATP production during the later stages of glycolysis.
+
+**Interpretation:**
+Together, these genes indicate a **metabolic switch from oxidative phosphorylation to aerobic glycolysis (Warburg effect)**. This metabolic adaptation allows cells to maintain energy production and generate biosynthetic intermediates when oxygen availability is limited.
+
+---
+
+### HIF1α Direct Targets (Hypoxia Signature)
+
+The upregulation of known **HIF1α-responsive genes** confirms activation of the canonical hypoxia response pathway.
+
+* **[P4HA1](https://www.ncbi.nlm.nih.gov/gene/5033)** – Encodes collagen prolyl hydroxylase involved in extracellular matrix remodeling and hypoxia signaling feedback mechanisms.
+* **[BHLHE40](https://www.ncbi.nlm.nih.gov/gene/8553)** – A transcriptional repressor that participates in stress responses, circadian rhythm regulation, and cell cycle modulation.
+
+**Interpretation:**
+The induction of these genes serves as an internal validation of the experiment, demonstrating that:
+
+* The hypoxic treatment successfully triggered the hypoxia signaling cascade
+* The **HIF1α pathway is transcriptionally active**
+* Downstream hypoxia-responsive transcriptional programs are engaged
+
+---
+
+### Structural Remodeling and Microenvironment Adaptation
+
+Several upregulated genes suggest that hypoxic cells actively modify their **cellular environment and structural organization**.
+
+* **[FUT11](https://www.ncbi.nlm.nih.gov/gene/170392)** – A fucosyltransferase that modifies glycoproteins on the cell surface, potentially influencing cell–cell and cell–matrix interactions.
+* **[ANKZF1](https://www.ncbi.nlm.nih.gov/gene/55139)** – A protein associated with stress responses and potentially involved in hypoxia-related signaling pathways.
+* **[RORA](https://www.ncbi.nlm.nih.gov/gene/6095)** – A transcription factor linking hypoxia signaling with circadian rhythm regulation and metabolic pathways.
+
+**Interpretation:**
+These transcriptional changes suggest that hypoxic cells are actively **remodeling their microenvironment**, potentially preparing for **angiogenic signaling and enhanced oxygen delivery**. Such remodeling can help create a **pro-survival cellular niche** during oxygen deprivation.
+
+---
+
+## 🔵 Downregulated Genes
+
+Although fewer in number, the downregulated genes likely represent cellular processes that are **energetically costly or less essential under hypoxic stress**.
+
+Commonly suppressed processes include:
+
+* Components of oxidative phosphorylation
+* Cell cycle progression pathways
+* Differentiation-associated genes
+
+This pattern reflects a strategy of **energy conservation and metabolic prioritization** during oxygen limitation.
+
+---
+
+## 🎯 Biological Conclusion
+
+Overall, the transcriptional landscape revealed by the volcano plot indicates a **coordinated adaptive response to hypoxia** characterized by:
+
+* **Metabolic reprogramming toward glycolysis** to sustain ATP production
+* **Activation of canonical HIF1α target genes** confirming hypoxia pathway engagement
+* **Microenvironment remodeling** that may promote angiogenesis and survival
+* **Transcriptional regulation integrating metabolic and stress responses**
+
+These observations are consistent with established models of **HIF1α-mediated hypoxic adaptation**, commonly observed in tumor biology and other oxygen-limited physiological contexts.
+
+---
+
+## 📌 Key Takeaway
+
+> Hypoxia induces a coordinated transcriptional program characterized by metabolic reprogramming toward glycolysis, activation of canonical HIF1α targets, and remodeling of the cellular microenvironment, collectively representing an adaptive survival response.
+
 
 ---
 
