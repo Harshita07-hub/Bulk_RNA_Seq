@@ -331,7 +331,97 @@ Unsupervised clustering of the top 50 most significant genes.
 
 <img width="1019" height="689" alt="Image" src="https://github.com/user-attachments/assets/83d717ca-70b2-4937-af0e-ed6f81a94ed0" />
 
-**Interpretation:** The heatmap clearly separates hypoxia samples from normoxia samples, indicating a robust and consistent transcriptional response. Within hypoxia samples, LNCaP and PC3 show distinct expression patterns, suggesting cell-type-specific hypoxia responses.
+🧬 Functional Categorization of Key Differentially Expressed Genes
+
+To understand the biological response to hypoxia, the top differentially expressed genes were grouped based on their known functions.
+
+1️⃣ Glycolysis & Metabolic Reprogramming
+
+Several upregulated genes indicate a metabolic shift toward glucose breakdown for energy production.
+
+Key genes: PFKFB3, PFKFB4, LDHA, PGK1, HK1, HK2, PFKP, GPI, PDK1, SLC2A1, SLC16A3
+
+PDK1 inhibits mitochondrial oxidative phosphorylation, blocking pyruvate entry into the TCA cycle.
+
+SLC2A1 and SLC16A3 facilitate glucose uptake and lactate export.
+
+Interpretation: Cells switch toward aerobic glycolysis (Warburg effect) — a hallmark of hypoxic adaptation.
+
+2️⃣ Canonical HIF1α Target Genes
+
+These genes confirm activation of the hypoxia signaling pathway.
+
+Key genes: CA9, BNIP3, BNIP3L, P4HA1, ERO1A, LOX, KDM3A, CITED2, NDRG1, BHLHE40
+
+Regulate pH balance (CA9), mitochondrial turnover (BNIP3/BNIP3L), ECM remodeling (P4HA1, LOX), and transcriptional feedback (CITED2).
+
+Interpretation: Upregulation reflects a classical hypoxia response.
+
+3️⃣ Angiogenesis & Microenvironment Remodeling
+
+Genes associated with vascular remodeling and angiogenesis help improve oxygen supply.
+
+Key genes: APLN, LOX
+
+APLN encodes an angiogenic peptide.
+
+LOX contributes to ECM remodeling and metastasis.
+
+Interpretation: Cells may enhance oxygen delivery under hypoxic stress.
+
+4️⃣ Cell Survival & Autophagy
+
+Hypoxia triggers pathways promoting cell survival and stress adaptation.
+
+Key genes: BNIP3, BNIP3L, NDRG1, RORA
+
+Regulate autophagy/mitophagy (BNIP3/BNIP3L) and stress responses (NDRG1, RORA).
+
+Interpretation: Supports homeostasis during oxygen deprivation.
+
+5️⃣ Transcriptional & Epigenetic Regulators
+
+Genes that act as transcription factors or chromatin regulators, controlling other genes.
+
+Key genes: BHLHE40, CITED2, KDM3A, RORA, KLF7, ZNF395, PIAS2, SAP30
+
+Interpretation: Coordinate the broader transcriptional response to hypoxia.
+
+6️⃣ Additional Genes with Diverse Functions
+
+Other DEGs contribute to various cellular processes:
+
+INSIG2 — Lipid metabolism, ER stress
+
+FUT11 — Protein fucosylation
+
+LRP1 — Endocytosis, signaling
+
+BTG1 — Cell cycle regulation
+
+TMEM45A, FAM162A — Hypoxia-induced, under investigation
+
+ARHGEF37 — Rho signaling
+
+RNF24 — Protein ubiquitination
+
+Interpretation: Likely contribute to cellular adaptation under stress.
+
+🔥 Overall Interpretation
+
+The functional categorization reveals a coordinated transcriptional program under hypoxic conditions:
+
+Metabolic reprogramming (PFKFB4, PDK1, LDHA, PGK1, HK2) → glycolysis (Warburg effect)
+
+HIF1α activation (CA9, BNIP3, P4HA1, ERO1A) → canonical hypoxia response
+
+Angiogenic factors (APLN, LOX) → enhanced oxygen delivery
+
+Survival & autophagy genes (BNIP3L, NDRG1, RORA) → stress adaptation
+
+Transcriptional regulators (BHLHE40, KDM3A, CITED2) → coordinate broader response
+
+Conclusion: These changes represent a comprehensive adaptive strategy, enabling cells to maintain energy production, regulate stress responses, and remodel their environment under hypoxia.
 
 ---
 
