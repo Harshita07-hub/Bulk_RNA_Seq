@@ -436,8 +436,45 @@ GSEA highlights a **coordinated transcriptional response to hypoxia** involving 
 
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/e2c7d848-f748-408c-a8ec-389297e4f94d" />
 
-**Interpretation:** The waterfall plot displays all Hallmark pathways with their NES scores. Positive NES (red) indicates pathways activated by hypoxia, while negative NES (blue) indicates suppressed pathways. I found that interferon response pathways are notably suppressed, suggesting hypoxia may dampen immune-related signaling.
+## 📊 GSEA Waterfall Plots
 
+### Key Observations
+
+The waterfall plots display the **Normalized Enrichment Score (NES)** for Hallmark pathways under hypoxic conditions.
+
+- **Positive NES** → Pathway enriched in **Hypoxia**
+- **Negative NES** → Pathway enriched in **Normoxia**
+
+### Pathways Enriched in Hypoxia
+
+Several pathways show positive enrichment scores, indicating activation under hypoxic conditions:
+
+- **HYPOXIA (NES ≈ +1.8)** – Confirms activation of HIF1α-regulated transcriptional programs.
+- **GLYCOLYSIS (NES ≈ +1.6)** – Supports metabolic reprogramming toward glycolysis (Warburg effect).
+- **MTORC1 SIGNALING (NES ≈ +1.4)** – Suggests regulation of cellular growth and metabolism during hypoxic stress.
+- **EPITHELIAL MESENCHYMAL TRANSITION (NES ≈ +1.2)** – Indicates cellular remodeling and microenvironment adaptation.
+- **UV RESPONSE DN (NES ≈ +1.0)** – Reflects cellular stress response pathways.
+- **TNFA SIGNALING VIA NFKB (NES ≈ +0.8)** – Suggests activation of inflammatory and stress-response signaling.
+
+### Pathways Enriched in Normoxia
+
+Some pathways show negative enrichment scores, indicating higher activity under normoxic conditions:
+
+- **INTERFERON GAMMA RESPONSE (NES ≈ −0.8)** – Immune signaling pathways more active under normal oxygen levels.
+- **INTERFERON ALPHA RESPONSE (NES ≈ −0.7)** – Reduced activity under hypoxic stress.
+- **MYC TARGETS V2 (NES ≈ −0.6)** – Downregulation of proliferation-related genes in hypoxia.
+
+### Consistency with Differential Expression Analysis
+
+The GSEA results are consistent with observations from the differential expression analyses:
+
+- Upregulation of **PFKFB4, PDK1, and LDHA** corresponds with enrichment of the **GLYCOLYSIS** pathway.
+- Increased expression of **CA9, BNIP3, and P4HA1** aligns with enrichment of the **HYPOXIA** pathway.
+- Coordinated upregulation of hypoxia-responsive genes in the heatmap further supports the pathway-level enrichment observed in GSEA.
+
+### Conclusion
+
+The waterfall plots indicate that hypoxia induces a **coordinated transcriptional response** involving metabolic reprogramming, activation of canonical hypoxia pathways, and cellular stress adaptation. In contrast, pathways related to immune signaling and proliferation show reduced activity under hypoxic conditions. These pathway-level findings support and validate the gene-level results obtained from differential expression analysis.
 ---
 
 ## 🔬 Androgen Receptor Signaling
