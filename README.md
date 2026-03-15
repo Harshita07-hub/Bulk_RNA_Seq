@@ -263,7 +263,65 @@ The MA plot shows the relationship between gene expression abundance and log fol
 
 <img width="1123" height="680" alt="Image" src="https://github.com/user-attachments/assets/ebe8a7a2-c0df-439a-8c5b-d77ff144069d" />
 
-**Interpretation:** The MA plot confirms no systematic bias in my fold change estimates. Genes with low mean expression show expected higher variance, but no obvious trend or skew is observed, validating the DESeq2 normalization.
+## 📈 MA Plot Analysis
+
+### Overview
+The MA plot visualizes the relationship between gene expression intensity and fold change between hypoxic and normoxic conditions. It serves both as a quality control tool and as a way to examine how hypoxia influences genes across different expression levels.
+
+---
+
+### Plot Interpretation
+
+- **X-axis (A value):** Average gene expression level (log scale)
+- **Y-axis (M value):** Log₂ fold change (Hypoxia vs Normoxia)
+- **Red/blue dots:** Significantly differentially expressed genes (padj < 0.05)
+- **Grey dots:** Non-significant genes
+
+---
+
+### Key Observations
+
+**1. Symmetric distribution around zero**
+
+The majority of genes are distributed symmetrically around the zero line, indicating effective normalization of the dataset using DESeq2. The absence of a global upward or downward shift suggests that no major systematic bias is present.
+
+---
+
+**2. Differential expression across expression levels**
+
+Significant genes are observed across the entire range of expression values. This indicates that hypoxia influences genes at multiple expression levels rather than affecting only highly or lowly expressed genes.
+
+---
+
+**3. Expression-level patterns**
+
+- **Low expression genes:** Greater variability and occasional extreme fold changes, which is expected due to higher statistical noise in low-count genes.
+- **Moderate expression genes:** Highest density of significant changes, suggesting that many hypoxia-responsive genes fall within this range.
+- **Highly expressed genes:** Tend to cluster close to the zero line, indicating stable expression of housekeeping genes.
+
+---
+
+### Quality Assessment
+
+The MA plot provides several indicators of good data quality:
+
+- Symmetric distribution around the baseline
+- No strong expression-dependent bias
+- Limited artifacts among low-count genes
+
+These observations suggest that the normalization and filtering steps were effective.
+
+---
+
+### Biological Interpretation
+
+Overall, the MA plot indicates that hypoxia induces transcriptional changes across a wide range of genes. The strongest differential expression appears among moderately expressed genes, which often include metabolic enzymes and signaling proteins involved in stress responses. In contrast, highly expressed housekeeping genes remain relatively stable between conditions.
+
+---
+
+### Conclusion
+
+The MA plot confirms that the dataset is well normalized and suitable for downstream interpretation. The observed patterns support a coordinated transcriptional response to hypoxia, consistent with activation of hypoxia-responsive pathways and metabolic adaptation.
 
 ---
 
