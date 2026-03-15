@@ -59,16 +59,16 @@ individual **SRR run identifiers**, ensuring full control over data handling.
 ## 🗂️ Project Directory Structure
 
 Bulk_RNA_Seq/
-├── fastq/              # Raw and processed FASTQ files
-├── fastqc_results/     # FastQC output (HTML + ZIP)
-├── multiqc_report/     # MultiQC summary report
-├── scripts/            # Bash scripts used in the pipeline
-├── figs/               # Screenshots and figures
-├── analysis/           # Intermediate analysis files
-├── alignedreads/       # Alignment outputs (future)
-├── quants/             # Gene quantification results (future)
-├── results/            # Final results
-└── README.md
+├── fastq/               # Raw and processed FASTQ files
+├── fastqc_results/      # FastQC reports (HTML + ZIP)
+├── multiqc_report/      # MultiQC summary report
+├── scripts/             # Bash scripts used in the pipeline
+├── figs/                # Figures and screenshots
+├── analysis/            # Intermediate analysis files
+├── alignedreads/        # Alignment outputs (future)
+├── quants/              # Gene quantification results (future)
+├── results/             # Final results
+└── README.md            # Project documentation
 
 
 
