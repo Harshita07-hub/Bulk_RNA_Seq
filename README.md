@@ -477,23 +477,50 @@ The GSEA results are consistent with observations from the differential expressi
 The waterfall plots indicate that hypoxia induces a **coordinated transcriptional response** involving metabolic reprogramming, activation of canonical hypoxia pathways, and cellular stress adaptation. In contrast, pathways related to immune signaling and proliferation show reduced activity under hypoxic conditions. These pathway-level findings support and validate the gene-level results obtained from differential expression analysis.
 ---
 
-## 🔬 Androgen Receptor Signaling
+## 🔬 Comparison with Guo et al. (2019)
 
-The original paper reported that hypoxia suppresses AR signaling in LNCaP cells. In my combined analysis, the Androgen Response pathway showed a positive NES (not significant). This discrepancy likely arises because PC3 cells are AR-negative, diluting the effect in the combined analysis.
+To assess the validity of our findings, we compared our results with the published study by Guo et al. (2019), which characterized the hypoxic response in prostate cancer cells.
 
-**Interpretation:** While I successfully reproduced most hypoxia-related findings, AR suppression could not be clearly demonstrated in my combined dataset. A dedicated LNCaP-only analysis with larger sample size would be needed to validate this specific finding.
+### Key Findings
 
----
+Several major observations reported in the original study were successfully reproduced in this analysis.
 
-## 🔍 Comparison with Guo et al. (2019)
+**Hypoxia induces a strong transcriptional response**  
+A total of **911 differentially expressed genes (DEGs)** were identified (padj < 0.05, log2FC > 1), indicating a substantial transcriptional shift under hypoxic conditions.
 
-| Finding | Reproduced? | Evidence |
-|---------|-------------|----------|
-| Hypoxia induces strong transcriptional response | ✅ Yes | 911 DEGs; classic markers upregulated |
-| Hypoxia activates glycolysis, mTORC1, EMT | ✅ Yes | Positive enrichment in GSEA |
-| AR signaling suppressed | ⚠️ Partial | Not significant in combined analysis |
-| Neuroendocrine markers | ❓ Not assessed | Could be examined in future work |
+**Classic hypoxia markers are upregulated**  
+Well-established HIF1α target genes including **VEGFA, CA9, PDK1, LDHA, and PGK1** were significantly upregulated in the differential expression analysis, confirming activation of canonical hypoxia pathways.
 
-**Overall Interpretation:** My analysis successfully reproduces the core finding that hypoxia activates glycolysis, mTORC1, and EMT pathways in prostate cancer cells. The hypoxia treatment was effective, as evidenced by strong upregulation of classic HIF1α targets (VEGFA, CA9, PDK1, LDHA, PGK1). The discrepancy in AR signaling highlights the importance of cell-type-specific analysis and adequate sample size.
-All trimming and quality control steps were implemented via shell scripts available in the `scripts/` directory, ensuring reproducibility and transparency of the analysis workflow.
+**Glycolysis pathway activation**  
+The **GLYCOLYSIS** hallmark pathway was significantly enriched in GSEA (NES ≈ +1.6), supporting the metabolic shift toward glycolysis under hypoxic stress.
 
+**mTORC1 signaling activation**  
+The **MTORC1 SIGNALING** pathway showed positive enrichment (NES ≈ +1.4), indicating altered growth and metabolic regulation in response to hypoxia.
+
+**Epithelial–Mesenchymal Transition (EMT)**  
+The **EMT** pathway was also enriched (NES ≈ +1.2), suggesting cellular remodeling and microenvironmental adaptation.
+
+### Androgen Receptor Signaling – A Closer Look
+
+The original study reported that hypoxia suppresses androgen receptor (AR) signaling in **LNCaP cells**. In our combined analysis (LNCaP + PC3), the **Androgen Response** pathway showed a positive enrichment score but was not statistically significant.
+
+This discrepancy can likely be explained by differences between the cell lines used:
+
+- **LNCaP cells are AR-positive**
+- **PC3 cells are AR-negative**
+
+Combining both cell lines in a single analysis may have diluted AR-specific transcriptional signals. As a result, AR pathway suppression could not be clearly detected in this dataset.
+
+### Overall Interpretation
+
+Overall, this analysis successfully reproduces the **core biological findings** reported by Guo et al.:
+
+- Hypoxia induces a strong transcriptional response  
+- Classical **HIF1α target genes** are strongly upregulated  
+- Key pathways including **glycolysis, mTORC1 signaling, and EMT** are activated under hypoxic conditions  
+
+The difference observed in AR signaling highlights the importance of **cell-type-specific analysis**. A dedicated **LNCaP-only analysis** would likely provide clearer insight into AR pathway suppression under hypoxia.
+
+### Reproducibility Note
+
+All preprocessing and analysis steps—including quality control, trimming, differential expression analysis, and pathway enrichment—were implemented through shell scripts and R code available in the `scripts/` directory, ensuring full **reproducibility and transparency** of the workflow.
