@@ -1,7 +1,6 @@
 # Bulk RNA-Seq Analysis: Hypoxia Response in Prostate Cancer Cells
 
-This repository contains a step-by-step bulk RNA-seq analysis workflow to study
-gene expression changes in response to hypoxia in prostate cancer cell lines.
+This repository presents a reproducible bulk RNA-seq analysis workflow to investigate transcriptional responses to hypoxia in prostate cancer cell lines.
 
 The project focuses on reproducibility, clarity, and learning-by-doing, with all
 commands, scripts, and intermediate outputs organized in a structured manner.
@@ -142,21 +141,13 @@ After concatenation of raw FASTQ files, reads were processed to improve sequenci
 
 ### Read Trimming
 
-Quality trimming was performed using **Trimmomatic (v0.40)** to remove low-quality bases from sequencing reads. Trimming focused on eliminating poor-quality bases from the 3′ end of reads, which commonly impact downstream analyses.
-
-Single-end reads were trimmed using the following parameters:
-- Removal of trailing bases with Phred quality scores below 10 (`TRAILING:10`)
-- Phred+33 quality score encoding
-- Multi-threaded execution for improved performance
+Quality trimming was performed using **Trimmomatic (v0.40)** to remove low-quality bases from sequencing reads.Reads were trimmed using Trimmomatic to remove low-quality bases.
 
 All concatenated FASTQ files were trimmed in a uniform and reproducible manner using shell scripts.
 
 ### Quality Assessment of Trimmed Reads
 
-Post-trimming quality assessment was carried out using **FastQC** to evaluate improvements in read quality. FastQC reports were generated for all trimmed FASTQ files to examine key quality metrics, including:
-- Per-base sequence quality
-- Sequence length distribution
-- Residual low-quality regions or technical biases
+Post-trimming quality assessment was carried out using **FastQC** to evaluate improvements in read quality.Quality of trimmed reads was assessed using FastQC. 
 
 FastQC was executed in batch mode, and results were organized into a dedicated output directory (`fastqc_trimmed_results/`).
 
@@ -165,7 +156,7 @@ FastQC was executed in batch mode, and results were organized into a dedicated o
 The following plots were generated to assess the data and visualize results. All figures are saved in the `figs/` directory.
 
 ### PCA Plot
-Principal Component Analysis shows clear separation by cell line (PC1, 99% variance) and a distinct effect of hypoxia (PC2, 1% variance). This confirms that both cell line differences and hypoxia treatment contribute to global gene expression patterns.
+Principal Component Analysis shows clear separation by cell line (PC1, 99% variance) and a distinct effect of hypoxia (PC2, 1% variance). 
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/684717f1-5856-4775-a903-22a1824e4413" />
 
 
