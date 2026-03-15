@@ -141,7 +141,7 @@ After concatenation of raw FASTQ files, reads were processed to improve sequenci
 
 ### Read Trimming
 
-Quality trimming was performed using **Trimmomatic (v0.40)** to remove low-quality bases from sequencing reads.Reads were trimmed using Trimmomatic to remove low-quality bases.
+Quality trimming was performed using **Trimmomatic (v0.40)** to remove low-quality bases and improve overall read quality before downstream analysis.
 
 All concatenated FASTQ files were trimmed in a uniform and reproducible manner using shell scripts.
 
@@ -160,7 +160,9 @@ Principal Component Analysis shows clear separation by cell line (PC1, 99% varia
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/684717f1-5856-4775-a903-22a1824e4413" />
 
 
-**Interpretation:** PC1 separates LNCaP and PC3 cells, indicating strong cell-line-specific expression differences. PC2 separates hypoxia from normoxia samples, confirming that hypoxia induces a detectable transcriptional response across both cell lines.
+**Interpretation:**
+PC1 separates LNCaP and PC3 cells, indicating strong cell-line-specific expression differences.
+PC2 separates hypoxia from normoxia samples, confirming that oxygen availability drives a measurable transcriptional response.
 
 ---
 
@@ -234,9 +236,9 @@ Overall, the MA plot supports the reliability of the dataset and confirms that d
 
 ### Heatmap of Top 50 DE Genes
 Unsupervised clustering of the top 50 most significant genes.
-
 The heatmap shows clear clustering of samples by oxygen condition.
-Hypoxia samples cluster together and display strong upregulation of multiple hypoxia-responsive genes.
+Hypoxia samples cluster together and display strong upregulation of multiple hypoxia-responsive genes, including **CA9, BNIP3, PDK1, LDHA, and PGK1**, which are well-known HIF1α targets.
+
 
 <img width="1019" height="689" alt="Image" src="https://github.com/user-attachments/assets/83d717ca-70b2-4937-af0e-ed6f81a94ed0" />
 
@@ -295,7 +297,6 @@ To identify biological pathways altered by hypoxia, I performed GSEA using Hallm
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/3e36e913-459b-481e-86f1-e3d739031ca9" />
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/966c2ed5-8880-4373-8217-34d1d4bc3f08" />
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/a3612ce8-bc72-42c8-8411-36e1b8a6ae96" />
-## 📊 Gene Set Enrichment Analysis (GSEA)
 
 To identify biological pathways affected by hypoxia, Gene Set Enrichment Analysis (GSEA) was performed using the Hallmark gene sets.
 
@@ -417,3 +418,16 @@ The difference observed in AR signaling highlights the importance of **cell-type
 ### Reproducibility Note
 
 All preprocessing and analysis steps—including quality control, trimming, differential expression analysis, and pathway enrichment—were implemented through shell scripts and R code available in the `scripts/` directory, ensuring full **reproducibility and transparency** of the workflow.
+
+## 📌 Project Summary
+
+This project demonstrates a reproducible RNA-seq analysis workflow to investigate transcriptional responses to hypoxia in prostate cancer cell lines.
+
+Key findings include:
+
+- Identification of **911 differentially expressed genes**
+- Activation of canonical **HIF1α hypoxia pathways**
+- Metabolic reprogramming toward **glycolysis**
+- Enrichment of pathways related to **mTORC1 signaling and EMT**
+
+Together, these results highlight a coordinated transcriptional program enabling prostate cancer cells to adapt to low-oxygen conditions.
