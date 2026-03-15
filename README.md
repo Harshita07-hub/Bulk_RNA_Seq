@@ -2,9 +2,6 @@
 
 This repository presents a reproducible bulk RNA-seq analysis workflow to investigate transcriptional responses to hypoxia in prostate cancer cell lines.
 
-The project focuses on reproducibility, clarity, and learning-by-doing, with all
-commands, scripts, and intermediate outputs organized in a structured manner.
-
 ---
 
 ## 📌 Study Background
@@ -121,27 +118,19 @@ Each step is documented and reproducible.
 This repository is actively evolving as the analysis progresses.
 The README and scripts are updated incrementally to reflect each completed step.
 
-## FASTQ sanity checks
+## FASTQ Processing and Validation
 
-Before downstream RNA-Seq analysis, FASTQ files were validated for correctness and sequencing depth.
+Before downstream RNA-seq analysis, FASTQ files were validated to ensure correct structure and sufficient sequencing depth.
 
-FASTQ structure was inspected to confirm:
+FASTQ files were inspected to confirm:
+
 - Proper 4-line FASTQ format
 - Presence of base quality scores
-- Expected read length (76 bp)
+- Expected read length (~76 bp)
 
-Sequencing depth was estimated by counting total lines in each FASTQ file and dividing by four (each read occupies four lines).  
-All samples showed sufficient read depth for bulk RNA-Seq differential expression analysis.
+Sequencing depth was estimated by counting total lines in each FASTQ file and dividing by four (each read occupies four lines). All samples showed sufficient read depth for bulk RNA-seq differential expression analysis.
 
-
-FASTQ Concatenation
-
-Each biological sample was sequenced across multiple SRA runs (technical replicates). FASTQ files corresponding to the same biological sample were concatenated before trimming to create one FASTQ file per sample.
-
-This ensures uniform trimming, simplifies downstream analysis, and preserves the total sequencing depth for each sample. After concatenation, each FASTQ file represents one complete biological sample and was used for further QC, trimming, alignment, and gene quantification.
-## Read Trimming and Quality Control
-
-After concatenation of raw FASTQ files, reads were processed to improve sequencing quality prior to downstream analysis.
+Because each biological sample was sequenced across multiple SRA runs (technical replicates), FASTQ files belonging to the same sample were concatenated prior to trimming. This produced one FASTQ file per biological sample, simplifying downstream processing while preserving total sequencing depth.
 
 ### Read Trimming
 
@@ -163,10 +152,11 @@ The following plots were generated to assess the data and visualize results. All
 Principal Component Analysis shows clear separation by cell line (PC1, 99% variance) and a distinct effect of hypoxia (PC2, 1% variance). 
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/684717f1-5856-4775-a903-22a1824e4413" />
 
-
 **Interpretation:**
-PC1 separates LNCaP and PC3 cells, indicating strong cell-line-specific expression differences.
-PC2 separates hypoxia from normoxia samples, confirming that oxygen availability drives a measurable transcriptional response.
+
+PC1 separates the two prostate cancer cell lines (LNCaP and PC3), indicating strong cell-type-specific expression differences.
+
+PC2 separates hypoxia from normoxia samples, demonstrating that oxygen availability drives a measurable transcriptional response.
 
 ---
 
@@ -175,7 +165,7 @@ Highly significant genes are highlighted; red points indicate upregulation under
 
 <img width="1255" height="692" alt="Image" src="https://github.com/user-attachments/assets/4183494c-4075-49c3-90b9-6cc0a8f162fe" />
 
-## 📊 Volcano Plot Interpretation : Transcriptional Response to Hypoxia
+## 📊 Volcano Plot Interpretation 
 
 ### Key Observations
 
@@ -229,7 +219,7 @@ The MA plot visualizes the relationship between average gene expression and log�
 
 ### Interpretation
 
-The MA plot does not highlight specific genes but instead illustrates the overall distribution of differential expression across the transcriptome. The symmetric distribution around zero and absence of strong expression-dependent bias indicate that the dataset is well normalized.
+The MA plot illustrates the overall distribution of differential expression across the transcriptome rather than highlighting individual genes. The symmetric distribution around zero and absence of strong expression-dependent bias indicate that the dataset is well normalized.
 
 ### Conclusion
 
@@ -240,7 +230,7 @@ Overall, the MA plot supports the reliability of the dataset and confirms that d
 
 ### Heatmap of Top 50 DE Genes
 
-Unsupervised clustering of the top 50 most significant genes.
+Unsupervised clustering of the 50 most significant differentially expressed genes.
 The heatmap shows clear clustering of samples by oxygen condition.
 Hypoxia samples cluster together and display strong upregulation of multiple hypoxia-responsive genes, including **CA9, BNIP3, PDK1, LDHA, and PGK1**, which are well-known HIF1α targets.
 
@@ -302,8 +292,6 @@ Gene Set Enrichment Analysis (GSEA) was performed using Hallmark gene sets to id
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/3e36e913-459b-481e-86f1-e3d739031ca9" />
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/966c2ed5-8880-4373-8217-34d1d4bc3f08" />
 <img width="1304" height="692" alt="Image" src="https://github.com/user-attachments/assets/a3612ce8-bc72-42c8-8411-36e1b8a6ae96" />
-
-To identify biological pathways affected by hypoxia, Gene Set Enrichment Analysis (GSEA) was performed using the Hallmark gene sets.
 
 ### Key Findings
 
@@ -373,7 +361,7 @@ The GSEA results are consistent with observations from the differential expressi
 
 ### Conclusion
 
-The waterfall plots indicate that hypoxia induces a **coordinated transcriptional response** involving metabolic reprogramming, activation of canonical hypoxia pathways, and cellular stress adaptation. In contrast, pathways related to immune signaling and proliferation show reduced activity under hypoxic conditions. These pathway-level findings support and validate the gene-level results obtained from differential expression analysis.
+The waterfall plots indicate that hypoxia induces a **coordinated transcriptional response** involving metabolic reprogramming, activation of canonical hypoxia pathways, and cellular stress adaptation. In contrast, pathways related to immune signaling and proliferation show reduced activity under hypoxic conditions. These pathway-level results further support the coordinated transcriptional response observed under hypoxia.
 ---
 
 ## 🛠️ Tools and Software
@@ -386,7 +374,7 @@ The following tools were used in this analysis pipeline:
 - **Trimmomatic** – read trimming
 - **R / DESeq2** – differential expression analysis
 - **clusterProfiler** – pathway enrichment analysis
-- **ggplot2 / pheatmap** – data visualization
+- **ggplot2 , pheatmap** – data visualization
 
 ## 🔬 Comparison with Guo et al. (2019)
 
