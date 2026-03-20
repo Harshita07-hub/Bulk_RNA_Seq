@@ -107,7 +107,7 @@ to generate them are preserved as scripts in the `scripts/` directory.
 2. Validate SRA metadata
 3. Convert SRA → FASTQ
 4. Perform quality control (FastQC)
-5. Downstream processing and analysis (ongoing)
+5. Downstream processing and analysis 
 
 Each step is documented and reproducible.
 
